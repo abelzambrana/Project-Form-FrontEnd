@@ -23,7 +23,7 @@ header .logo {
 
 header {
     width: 100%;
-    background-color: #292929;
+    background-color: #096996;
     color: white;
     display: flex;
     justify-content: space-between;
@@ -42,7 +42,7 @@ header .logo {
 }
 
 header .logo img {
-    height: 30px;
+    height: 40px;
     margin-right: 10px;
 }
 
@@ -110,7 +110,7 @@ h2{
 
 .sidebar {
     width: 250px;
-    background-color: #292929;
+    background-color: #096996;
     height: 100vh;
     position: fixed;
     top: 60px;
