@@ -1,4 +1,4 @@
-const baseURLProductos = 'http://127.0.0.1:5000/api/productos/';  
+const baseURLProductos = 'http://127.0.0.1:5000/api/producto/';  
 
 document.addEventListener('DOMContentLoaded', () => {
     cargarProductos(); // Cargar productos por defecto al iniciar la página
@@ -66,7 +66,7 @@ function mostrarProductos(productos) {
                     <th>Fecha de vencimiento</th>
                     <th>Precio de venta</th>
                     <th>Precio de costo</th>
-                    <th>Ganancia/th>
+                    <th>Ganancia</th>
                     <th>Stock</th>
                     <th>Categoría</th>
                     <th>Banner</th>
