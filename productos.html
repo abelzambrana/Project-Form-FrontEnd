@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de Productos</title>
+    <link rel="stylesheet" href="/css/productos.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <section id="crud-productos">
+        <h2>Gestión de Productos</h2>
+        <form id="form-producto">
+            <div class="form-control">
+                <label for="nombre-producto">Nombre</label>
+                <input type="text" name="nombre" id="nombre-producto">
+            </div>
+
+            <div class="form-control">
+                <label for="fabricante">Fabricante</label>
+                <textarea name="fabricante" id="fabricante"></textarea>
+            </div>
+
+            <div class="form-control">
+                <label for="codigo_barra">Codigo de barra</label>
+                <textarea name="codigo_barra" id="codigo_barra"></textarea>
+            </div>
+
+            <div class="form-control">
+                <label for="due_date">Fecha de vencimiento</label>
+                <input type="date" name="due_date" id="due_date">
+            </div>
+
+            <div class="form-control">
+                <label for="sale_price">Precio de venta</label>
+                <input type="number" step="0.01" name="sale_price" id="sale_price">
+            </div>
+
+            <div class="form-control">
+                <label for="cost_price">Precio de costo</label>
+                <input type="number" step="0.01" name="cost_price" id="cost_price">
+            </div>
+
+            <div class="form-control">
+                <label for="ganancia">Ganancia</label>
+                <input type="number" step="0.01" name="ganancia" id="ganancia">
+            </div>
+
+            <div class="form-control">
+                <label for="stock">Stock</label>
+                <input type="number" name="stock" id="stock">
+            </div>
+
+            <div class="form-control">
+                <label for="categoria">Categoría</label>
+                <select name="categoria" id="categoria">
+                    <!-- Aquí se llenarán las categorías desde la base de datos -->
+                </select>
+            </div>
+
+            <div class="form-control">
+                <label for="banner">Banner</label>
+                <input type="url" name="banner" id="banner">
+            </div>
+
+            <input type="hidden" name="id_producto" id="id_producto">
+            <button type="button" id="btn-save-producto">Agregar</button>
+        </form>
+
+        <h3>Listado de Productos</h3>
+        <table id="list-table-productos">
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Fabricante</th>
+                    <th>Codigo de barra</th>
+                    <th>Facha de vencimiento</th>
+                    <th>Precio de venta</th>
+                    <th>Precio de costo</th>
+                    <th>Ganancia</th>
+                    <th>Stock</th>
+                    <th>Categoría</th>
+                    <th>Banner</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody id="tbody-table-productos"></tbody>
+        </table>
+    </section>
+    <!--<script src="/dashboard/js/script.js"></script> --> <!--funciono con cualquiera de los dos-->
+    <!--<script src="/dashboard/js/productos.js"></script> -->
+    <script src="/js/productos.js"></script>
+</body>
+</html>
