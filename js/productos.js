@@ -168,7 +168,6 @@ async function guardarProducto() {
         due_date: formData.get('due_date'),
         sale_price: formData.get('sale_price'),
         cost_price: formData.get('cost_price'),
-        //ganancia: formData.get('sale_price'-'cost_price'),
         ganancia: formData.get('ganancia'),
         stock: formData.get('stock'),
         categoria: formData.get('categoria'),
