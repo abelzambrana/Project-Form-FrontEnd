@@ -18,11 +18,11 @@ async function cargarProductos() {
 }
 
 function mostrarProductos(productos) {
-    const mainContent = document.getElementById('content');
+    const mainContent = document.getElementById('content');   // Cambio id_producto por id
     mainContent.innerHTML = `
         <h2>Gestión de Productos</h2>
         <form id="form-producto">
-            <input type="hidden" id="id_producto" name="id_producto">
+            <input type="hidden" id="id" name="id">
 
             <input type="text" id="nombre" name="nombre" placeholder="Nombre">
 
@@ -87,14 +87,14 @@ function mostrarProductos(productos) {
                         <td>${producto.categoria}</td>
                         <td><img src="${producto.banner}" alt="${producto.nombre}" style="width: 100px; height: auto;"></td>
                         <td>
-                            <button class="btn-editar" data-id="${producto.id_producto}">Editar</button>
-                            <button class="btn-eliminar" data-id="${producto.id_producto}">Eliminar</button>
+                            <button class="btn-editar" data-id="${producto.id}">Editar</button>
+                            <button class="btn-eliminar" data-id="${producto.id}">Eliminar</button>
                         </td>
                     </tr>
                 `).join('')}
             </tbody>
         </table>
-    `;
+    `;                                                        // Cambio id_producto por id
 
     // Configurar eventos para los botones de editar y eliminar
     const btnEditar = mainContent.querySelectorAll('.btn-editar');
@@ -102,7 +102,7 @@ function mostrarProductos(productos) {
 
     btnEditar.forEach(btn => {
         btn.addEventListener('click', async () => {
-            const idProducto = btn.dataset.id_producto;
+            const idProducto = btn.dataset.id; // Cambio id_producto por id
             const producto = await obtenerProducto(idProducto);
             llenarFormularioProducto(producto);
         });
@@ -111,7 +111,7 @@ function mostrarProductos(productos) {
 
     btnEliminar.forEach(btn => {
         btn.addEventListener('click', async () => {
-            const idProducto = btn.dataset.id_producto;
+            const idProducto = btn.dataset.id; // Cambio id_producto por id
             if (confirm('¿Estás seguro de eliminar este producto?')) {
                 await eliminarProducto(idProducto);
                 cargarProductos();
@@ -197,7 +197,7 @@ async function guardarProducto() {
 async function actualizarProducto() {
     const formProducto = document.getElementById('form-producto');
     const formData = new FormData(formProducto);
-    const idProducto = formData.get('id_producto');
+    const idProducto = formData.get('id');   // Cambio id_producto por id
     const data = {
         nombre: formData.get('nombre'),
         fabricante: formData.get('fabricante'),
@@ -246,7 +246,7 @@ async function eliminarProducto(id) {
 
 function llenarFormularioProducto(producto) {
     const formProducto = document.getElementById('form-producto');
-    formProducto.querySelector('#id_producto').value = producto.id_producto;
+    formProducto.querySelector('#id').value = producto.id;   // Cambio id_producto por id
     formProducto.querySelector('#nombre').value = producto.nombre;
     formProducto.querySelector('#fabricante').value = producto.fabricante;
     formProducto.querySelector('#codigo_barra').value = producto.codigo_barra;
