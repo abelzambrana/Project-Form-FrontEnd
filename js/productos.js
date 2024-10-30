@@ -22,7 +22,7 @@ function mostrarProductos(productos) {
     mainContent.innerHTML = `
         <h2>Gestión de Productos</h2>
         <form id="form-producto">
-            <input type="hidden" id="id" name="id">
+            <input type="number" id="id" name="id">
 
             <input type="text" id="nombre" name="nombre" placeholder="Nombre">
 
