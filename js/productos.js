@@ -87,14 +87,19 @@ function mostrarProductos(productos) {
                         <td>${producto.categoria}</td>
                         <td><img src="${producto.banner}" alt="${producto.nombre}" style="width: 100px; height: auto;"></td>
                         <td>
-                            <button class="btn-editar" data-id="${producto.id}">Editar</button>
-                            <button class="btn-eliminar" data-id="${producto.id}">Eliminar</button>
+                            <button class="btn-editar" data-id="${producto.id_producto}">Editar</button>
+                            <button class="btn-eliminar" data-id="${producto.id_producto}">Eliminar</button>
                         </td>
                     </tr>
                 `).join('')}
             </tbody>
         </table>
     `;                                                        // Cambio id_producto por id
+    //<button class="btn-editar" data-id="${producto.id}">Editar</button>
+    //<button class="btn-eliminar" data-id="${producto.id}">Eliminar</button>
+    
+    //<button class="btn-editar" onclick='actualizarProducto(${producto.id_producto})'>Editar</button>
+    //<button class="btn-eliminar" onclick='eliminarProducto(${producto.id_producto})'>Eliminar</button>
 
     // Configurar eventos para los botones de editar y eliminar
     const btnEditar = mainContent.querySelectorAll('.btn-editar');
@@ -197,7 +202,7 @@ async function guardarProducto() {
 async function actualizarProducto() {
     const formProducto = document.getElementById('form-producto');
     const formData = new FormData(formProducto);
-    const idProducto = formData.get('id');   // Cambio id_producto por id
+    const idProducto = formData.get('id_producto');   // Cambio id_producto por id
     const data = {
         nombre: formData.get('nombre'),
         fabricante: formData.get('fabricante'),
@@ -246,7 +251,7 @@ async function eliminarProducto(id) {
 
 function llenarFormularioProducto(producto) {
     const formProducto = document.getElementById('form-producto');
-    formProducto.querySelector('#id').value = producto.id;   // Cambio id_producto por id
+    formProducto.querySelector('#id').value = producto.id_producto;   // Cambio id_producto por id
     formProducto.querySelector('#nombre').value = producto.nombre;
     formProducto.querySelector('#fabricante').value = producto.fabricante;
     formProducto.querySelector('#codigo_barra').value = producto.codigo_barra;
