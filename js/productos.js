@@ -202,7 +202,7 @@ async function guardarProducto() {
 async function actualizarProducto() {
     const formProducto = document.getElementById('form-producto');
     const formData = new FormData(formProducto);
-    const idProducto = formData.get('id_producto');   // Cambio id_producto por id
+    const idProducto = formData.get('id');   // Cambio id_producto por id
     const data = {
         nombre: formData.get('nombre'),
         fabricante: formData.get('fabricante'),
