@@ -62,3 +62,13 @@
 #list-table-productos tbody tr:hover {
     background-color: #f1f1f1;
 }
+
+/* color boton especif : ultimo agregado*/
+#btn-update-producto {
+    background-color: #28a745;
+}
+
+#btn-update-producto:hover {
+    /* background-color: #218838; */
+    background-color: #FF8000;
+}
